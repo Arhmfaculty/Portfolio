@@ -225,7 +225,7 @@ h3 {
 .project h3 {
     color: #66fcf1;
     margin-bottom: 10px;
-    font-size: 1.5em; /* Larger heading */
+    font-size: 1.3rem;/* Larger heading */
 }
 
 .project p {
@@ -235,8 +235,8 @@ h3 {
 }
 
 .project img {
-    width: 100%;
-    max-width: 100%; /* Ensures responsive images */
+    width: 80%;
+    max-width: 80%; /* Ensures responsive images */
     height: auto;
     border-radius: 10px;
     margin-bottom: 15px;
@@ -256,31 +256,47 @@ h3 {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+    justify-content: center;
+    padding: 20px;
 }
 
 .certification {
-    padding: 10px;
-    background-color: #0b0c10;
+    padding: 15px;
+    background-color: #1f2833;
     border-radius: 10px;
-    width: 300px;
+    width: 280px;
     text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.certification h4{
+.certification:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.certification h4 {
     font-size: 1.2rem;
     color: #66fcf1;
-    margin-bottom: 10px;
+    margin: 15px 0 10px 0;
 }
 
-.certification p {
+.certification a {
     font-size: 0.9em;
-    color: #c5c6c7;
+    color: #3d40ff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.certification a:hover {
+    color: #66fcf1;
 }
 
 .certification img {
-    width: 100%;
-    max-width: 400px;
+    width: 150%;
+    max-width: 120px;
     border-radius: 10px;
+    margin-bottom: 15px;
 }
 
 /* Contact Section Styling */

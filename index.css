@@ -33,6 +33,7 @@ body {
 }
 
 /* Hero Section */
+
 .hero {
     height: 100vh;
     display: flex;
@@ -41,6 +42,7 @@ body {
     background: url('images/home.jpg') no-repeat center center/cover;
     position: relative;
 }
+
 .hero-overlay {
     background: rgba(0, 0, 0, 0.9);
     padding: 20px;
@@ -51,11 +53,55 @@ body {
 
 .hero h1 {
     font-size: 3em;
+    animation: typing 4s steps(40) 1s forwards, blink 0.75s step-end infinite;
+    white-space: nowrap;
+    overflow: hidden; /* Prevents the text from going out of bounds */
+    display: inline-block;
+    width: 0; /* Initially set width to 0 */
 }
 
+.hero h1 span {
+    color: #66fcf1; /* Color for MAXWELL */
+}
+
+/* Typing animation */
+@keyframes typing {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+/* Cursor Blinking effect */
+@keyframes blink {
+    0%,
+    100% {
+        border-right: 3px solid transparent;
+    }
+    50% {
+        border-right: 3px solid #66fcf1; /* Cursor color */
+    }
+}
+
+
+/* Remove scrolling animation */
 .hero p {
     font-size: 1.2em;
+    animation: fadeIn 3s ease-in-out; /* Fade-in effect for paragraph */
 }
+
+/* Fade-in animation for the paragraph */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 
 /* Call-to-action Button */
 .cta-button {
@@ -383,17 +429,19 @@ h3 {
 /* Contact Information Styling */
 .contact-info {
     flex: 1;
-    max-width: 400px;
+    max-width: 1000px;
     background-color: #0b0c10;
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    text-align: left;
+    text-align: center;
+    margin: 0 auto; /* This centers the element horizontally */
+    width: 90%; /* Add responsive width */
 }
 
 .contact-info h3 {
     color: #66fcf1;
-    font-size:1.5rem;
+    font-size: 1.5rem;
     margin-bottom: 20px;
 }
 
@@ -401,20 +449,24 @@ h3 {
     list-style: none;
     padding: 0;
     color: #bbb;
+    display: inline-block; /* Better centering for list items */
+    text-align: left; /* Align list text to left while keeping container centered */
 }
 
 .contact-info ul li {
     font-size: 1rem;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .contact-info a {
     color: #66fcf1;
     text-decoration: none;
+    transition: color 0.3s ease; /* Smooth hover effect */
 }
 
 .contact-info a:hover {
     text-decoration: underline;
+    color: #45a29e;
 }
 
 /* Responsive Design for Smaller Screens */

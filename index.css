@@ -435,8 +435,9 @@ h3 {
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     text-align: center;
-    margin: 0 auto; /* This centers the element horizontally */
-    width: 90%; /* Add responsive width */
+    margin: 0 auto;
+    width: 90%;
+    transition: transform 0.3s ease; /* Smooth scaling animation */
 }
 
 .contact-info h3 {
@@ -449,24 +450,72 @@ h3 {
     list-style: none;
     padding: 0;
     color: #bbb;
-    display: inline-block; /* Better centering for list items */
-    text-align: left; /* Align list text to left while keeping container centered */
+    display: inline-block;
+    text-align: center;
+    width: 100%; /* Full width on mobile */
 }
 
 .contact-info ul li {
     font-size: 1rem;
     margin-bottom: 20px;
+    padding: 8px 0; /* Better touch targets */
 }
 
 .contact-info a {
     color: #66fcf1;
     text-decoration: none;
-    transition: color 0.3s ease; /* Smooth hover effect */
+    transition: all 0.3s ease;
+    display: inline-block; /* Better for mobile interactions */
+    padding: 4px 8px; /* Larger touch area */
+    border-radius: 4px;
 }
 
 .contact-info a:hover {
     text-decoration: underline;
     color: #45a29e;
+    background-color: rgba(102, 252, 241, 0.1); /* Subtle hover background */
+    transform: translateY(-2px); /* Lift effect */
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+    .contact-info {
+        padding: 30px;
+        width: 95%;
+        border-radius: 8px;
+    }
+
+    .contact-info h3 {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+    }
+
+    .contact-info ul li {
+        font-size: 0.95rem;
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-info {
+        padding: 20px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .contact-info h3 {
+        font-size: 1.2rem;
+        margin-bottom: 12px;
+    }
+
+    .contact-info ul li {
+        font-size: 0.9rem;
+        margin-bottom: 12px;
+        padding: 6px 0;
+    }
+
+    .contact-info a {
+        padding: 3px 6px;
+    }
 }
 
 /* Responsive Design for Smaller Screens */

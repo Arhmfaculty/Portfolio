@@ -33,7 +33,6 @@ body {
 }
 
 /* Hero Section */
-
 .hero {
     height: 100vh;
     display: flex;
@@ -49,15 +48,17 @@ body {
     text-align: center;
     border-radius: 10px;
     color: white;
+    max-width: 90%; /* Prevent overlay from overflowing on small screens */
+    margin: 0 15px; /* Add side margins for better spacing */
 }
 
 .hero h1 {
     font-size: 3em;
     animation: typing 4s steps(40) 1s forwards, blink 0.75s step-end infinite;
     white-space: nowrap;
-    overflow: hidden; /* Prevents the text from going out of bounds */
+    overflow: hidden;
     display: inline-block;
-    width: 0; /* Initially set width to 0 */
+    width: 0;
 }
 
 .hero h1 span {
@@ -85,8 +86,7 @@ body {
     }
 }
 
-
-/* Remove scrolling animation */
+/* Paragraph styling */
 .hero p {
     font-size: 1.2em;
     animation: fadeIn 3s ease-in-out; /* Fade-in effect for paragraph */
@@ -102,7 +102,6 @@ body {
     }
 }
 
-
 /* Call-to-action Button */
 .cta-button {
     display: inline-block;
@@ -112,6 +111,69 @@ body {
     color: #ffffff;
     text-decoration: none;
     border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #66fcf1;
+    transform: translateY(-2px); /* Lift effect on hover */
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero-overlay {
+        padding: 15px; /* Reduced padding for smaller screens */
+        border-radius: 8px; /* Slightly smaller border radius */
+    }
+
+    .hero h1 {
+        font-size: 2em; /* Smaller font size for heading */
+    }
+
+    .hero p {
+        font-size: 1em; /* Smaller font size for paragraph */
+    }
+
+    .cta-button {
+        padding: 8px 16px; /* Smaller button padding */
+        font-size: 0.9em; /* Smaller button text */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-overlay {
+        padding: 10px; /* Minimal padding for very small screens */
+        border-radius: 6px; /* Smaller border radius */
+    }
+
+    .hero h1 {
+        font-size: 1.5em; /* Even smaller font size for heading */
+    }
+
+    .hero p {
+        font-size: 0.9em; /* Smaller font size for paragraph */
+    }
+
+    .cta-button {
+        padding: 6px 12px; /* Minimal button padding */
+        font-size: 0.8em; /* Smaller button text */
+    }
+}
+
+/* Very Small Screens (e.g., phones in portrait mode) */
+@media (max-width: 360px) {
+    .hero h1 {
+        font-size: 1.2em; /* Smallest font size for heading */
+    }
+
+    .hero p {
+        font-size: 0.8em; /* Smallest font size for paragraph */
+    }
+
+    .cta-button {
+        padding: 5px 10px; /* Minimal button padding */
+        font-size: 0.75em; /* Smallest button text */
+    }
 }
 
 /* Section Styling */

@@ -480,41 +480,47 @@ h3 {
 /* Mobile Responsive Adjustments */
 @media (max-width: 768px) {
     .contact-info {
-        padding: 30px;
-        width: 95%;
+        padding: 25px; /* Reduced padding for smaller screens */
+        width: 100%; /* Full width on smaller screens */
         border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Lighter shadow */
     }
 
     .contact-info h3 {
-        font-size: 1.3rem;
+        font-size: 1.3rem; /* Slightly smaller heading */
         margin-bottom: 15px;
     }
 
     .contact-info ul li {
-        font-size: 0.95rem;
+        font-size: 0.95rem; /* Smaller font for better fit */
         margin-bottom: 15px;
+        padding: 6px 0; /* Adjusted padding */
+    }
+
+    .contact-info a {
+        padding: 3px 6px; /* Smaller padding for links */
     }
 }
 
 @media (max-width: 480px) {
     .contact-info {
-        padding: 20px;
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+        padding: 20px; /* Even smaller padding for phones */
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1); /* Minimal shadow */
     }
 
     .contact-info h3 {
-        font-size: 1.2rem;
+        font-size: 1.2rem; /* Smaller heading for phones */
         margin-bottom: 12px;
     }
 
     .contact-info ul li {
-        font-size: 0.9rem;
+        font-size: 0.9rem; /* Smaller font for phones */
         margin-bottom: 12px;
-        padding: 6px 0;
+        padding: 5px 0; /* Minimal padding */
     }
 
     .contact-info a {
-        padding: 3px 6px;
+        padding: 2px 4px; /* Minimal padding for links */
     }
 }
 
@@ -523,12 +529,33 @@ h3 {
     .contact-container {
         flex-direction: column;
         align-items: center;
+        padding: 0 15px; /* Add side padding for better spacing */
     }
 
     .contact-form,
     .contact-info {
-        max-width: 100%;
-        margin-bottom: 30px;
+        max-width: 100%; /* Full width for smaller screens */
+        margin-bottom: 20px; /* Reduced margin for tighter spacing */
+    }
+}
+
+/* Extra Small Screens (e.g., phones in portrait mode) */
+@media (max-width: 360px) {
+    .contact-info {
+        padding: 15px; /* Minimal padding for very small screens */
+    }
+
+    .contact-info h3 {
+        font-size: 1.1rem; /* Even smaller heading */
+    }
+
+    .contact-info ul li {
+        font-size: 0.85rem; /* Smaller font for very small screens */
+        margin-bottom: 10px;
+    }
+
+    .contact-info a {
+        padding: 2px 4px; /* Minimal padding for links */
     }
 }
 

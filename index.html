@@ -43,7 +43,7 @@
   
       <!-- About Text Section -->
       <div class="about-text">
-        <p class="intro-text">I am a final-year Computer Engineering student with a passion for cybersecurity, and data privacy. My goal is to design secure systems that empower businesses and individuals, ensuring data safety and privacy in an increasingly connected world.</p>
+        <p class="intro-text">I am a junior cybersecurity analyst with focus on penetration testing, Digital Forensics and investigations, and dat privacy. My goal is to protect and secure systems that empower businesses and individuals, ensuring data safety and privacy in an increasingly connected world.</p>
         
         <h3>SKILLS</h3>
         <div class="skills-container">
@@ -81,6 +81,108 @@
 <section id="projects">
     <h2>Projects</h2>
     <div class="projects-container">
+          
+      <div class="project">
+        <div class="project-header">
+          <img src="images/VoiceID.png" alt="voiceID" class="project-image">
+          <h3>VoiceID: Voice-Based Gender Recognition System</h3>
+        </div>
+        <p class="project-description">
+         Designed and implemented a voice biometrics system capable of identifying a speaker’s gender through signal processing and acoustic feature analysis. 
+         Built in MATLAB, the system extracts features such as pitch and frequency ranges from audio input for real-time classification.
+        This project demonstrates the application of biometric authentication, digital signal processing, and machine learning concepts in secure identity verification systems.
+          <div class="project-links">
+          <a href="documents/VoiceID.pdf" target="_blank" class="cta-button">Project report</a>
+          <a href="https://github.com/Arhmfaculty/Gender-based-voice-recognition-using-MATLAB" target="_blank" class="cta-button">View Repo</a>
+        </div>
+      </div>
+
+            <div class="project">
+        <div class="project-header">
+          <img src="images/passwordpro.png" alt="Password pro" class="project-image">
+          <h3>Smart Password Tool (Password Pro)</h3>
+        </div>
+        <p class="project-description">
+          Developed a Python desktop application with Tkinter that helps users generate strong, random passwords and evaluate the strength of existing ones.
+          Designed to combat weak password practices, the tool provides real-time feedback, improvement tips, and a simple GUI for secure password management.
+          Key features include password strength analysis, instant secure password generation, clipboard copy functionality, and an intuitive Tkinter-based interface.
+          Built to be lightweight and fully offline, ensuring usability without external dependencies.
+          <div class="project-links">
+          <a href="https://github.com/Arhmfaculty/Smart-Password-Tool" target="_blank" class="cta-button">Project Details</a>
+          <a href="https://github.com/Arhmfaculty/Smart-Password-Tool/blob/main/PasswordChecker.py" target="_blank" class="cta-button">View Code</a>
+        </div>
+      </div>
+
+            <div class="project">
+        <div class="project-header">
+          <img src="images/scanner.jpg" alt="Port Scanner" class="project-image">
+          <h3>Python TCP Port Scanner</h3>
+        </div>
+        <p class="project-description">
+           Developed a lightweight Python-based TCP port scanner to identify open ports on a given IP or domain within a user-defined range.
+          Built using only Python’s standard libraries (socket, datetime), the tool reinforces the fundamentals of network communication and port scanning without relying on external tools like Nmap.
+          Key features include domain-to-IP resolution, custom port range scanning, open port detection, scan duration tracking, and a clean CLI interface with input validation. 
+         <div class="project-links">
+          <a href="https://github.com/Arhmfaculty/Port-Scanner" target="_blank" class="cta-button">Project Details</a>
+          <a href="https://github.com/Arhmfaculty/Port-Scanner/blob/main/PortScanner.py" target="_blank" class="cta-button">View Code</a>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-header">
+          <img src="images/juiceShop.png" alt="owasp juice shop" class="project-image">
+          <h3>Penetration Testing Using OWASP Juice Shop</h3>
+        </div>
+        <p class="project-description">
+          Conducted a penetration test on a locally hosted OWASP Juice Shop instance using Docker and Kali Linux to simulate real-world web application attacks. 
+          Leveraged Burp Suite, Nmap, and Kali utilities to identify and exploit multiple vulnerabilities, including SQL Injection (authentication bypass), Stored and Reflected XSS, Insecure File Upload, and Directory Traversal.
+          Findings demonstrated risks such as unauthorized admin access, session hijacking, malicious file uploads, and sensitive file disclosure.
+         <div class="project-links">
+          <a href="documents/OWASP Juice Shop.pdf" target="_blank" class="cta-button">Project report</a>
+        </div>
+      </div>
+
+            <div class="project">
+        <div class="project-header">
+          <img src="images/hacksecure.png" alt="hacksecure" class="project-image">
+          <h3>Web Application Vulnerability Assessment</h3>
+        </div>
+        <p class="project-description">
+          As part of my internship with Hack Secure, I conducted a penetration test on a deliberately vulnerable web application (testphp.vulnweb.com). 
+          Using tools such as Nmap, DirBuster, and Wireshark, I identified multiple security flaws, including default credential exposure, SQL Injection, and reflected XSS vulnerabilities. 
+          Network traffic analysis revealed sensitive data transmitted in clear text over HTTP, highlighting risks of credential theft.
+         <div class="project-links">
+          <a href="documents/HACK SECURE_INTERNSHIP.pdf" target="_blank" class="cta-button">Project report</a>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-header">
+          <img src="images/john_the_ripper.jpg" alt="john the ripper" class="project-image">
+          <h3>Hash-Based Password Cracking with John the Ripper</h3>
+        </div>
+        <p class="project-description">
+          Conducted a hands-on lab using John the Ripper in Kali Linux to simulate real-world password cracking techniques. 
+          Implemented dictionary attacks with rockyou.txt, built custom wordlists, and performed incremental brute-force to analyze password vulnerabilities. 
+          Successfully cracked test hashes and simulated /etc/shadow file breaches, gaining practical experience in hash identification, attack optimization, and Linux-based security testing.
+         <div class="project-links">
+          <a href="documents/John the Ripper.pdf" target="_blank" class="cta-button">Project report</a>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-header">
+          <img src="images/honeypot.png" alt="honey pot" class="project-image">
+          <h3>Deploying and Monitoring a High-Interaction SSH/Telnet Honeypot with Cowrie</h3>
+        </div>
+        <p class="project-description">
+          Deployed a high-interaction honeypot using Cowrie in a Dockerized Kali Linux environment to simulate exposed SSH/Telnet services. 
+          Monitored real-time attacker interactions, capturing IP addresses, credentials, commands, and timestamps while analyzing common post-exploitation behaviors such as privilege escalation attempts and file downloads. 
+          Gained hands-on experience in Docker containerization, honeypot deployment, real-time log monitoring, and attacker profiling, while reinforcing the role of deception technologies in modern cybersecurity defense.
+         <div class="project-links">
+          <a href="documents/Creating honeypot using Cowrie.pdf" target="_blank" class="cta-button">Project report</a>
+        </div>
+      </div>
 
       <div class="project">
         <div class="project-header">
@@ -93,6 +195,21 @@
          <div class="project-links">
           <a href="https://github.com/Arhmfaculty/Fraud-Detection/blob/main/Maxwell_Fraud_Detection.ipynb" target="_blank" class="cta-button">Project Details</a>
           <a href="https://github.com/Arhmfaculty/Fraud-Detection/blob/main/maxwell_fraud_detection.py" target="_blank" class="cta-button">View Code</a>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-header">
+          <img src="images/sensepayy.jpg" alt="sensepay" class="project-image">
+          <h3>SensePay: Preventing Relay Attacks in NFC Payments with Edge ML</h3>
+        </div>
+        <p class="project-description">
+          Developed and deployed a fraud detection system leveraging supervised machine learning to identify anomalies in financial transactions. 
+          The model analyzed key behavioral features, including transaction amount, transaction time, account age, and location changes, to classify suspicious activity. 
+          Delivered high accuracy in distinguishing legitimate vs. fraudulent transactions, demonstrating the potential of data-driven approaches for real-time financial security.
+         <div class="project-links">
+          <a href="documents/SensePay.pdf" target="_blank" class="cta-button">Project Details</a>
+          <a href="https://github.com/Arhmfaculty/SensePay-A-Proof-of-Concept-Smart-Security-Framework-for-NFC-Based-Transactions" target="_blank" class="cta-button">View repo</a>
         </div>
       </div>
 

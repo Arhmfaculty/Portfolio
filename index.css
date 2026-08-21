@@ -7,6 +7,15 @@ html {
     box-sizing: border-box;
 }
 
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+img, video, iframe, canvas, svg {
+    max-width: 100%;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
@@ -1326,6 +1335,16 @@ footer a:hover {
         display: none !important;
     }
 
+    section {
+        padding: 40px 15px;
+        max-width: 100%;
+    }
+
+    section h2 {
+        font-size: 1.6rem;
+        margin-bottom: 25px;
+    }
+
     .nav-container {
         flex-direction: row;
         align-items: center;
@@ -1337,6 +1356,8 @@ footer a:hover {
         font-size: 0.95rem;
         font-weight: 700;
         white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     /* Outside Mobile Quick Links */
@@ -1370,6 +1391,7 @@ footer a:hover {
         cursor: pointer;
         padding: 0;
         z-index: 1100;
+        flex-shrink: 0;
     }
 
     .hamburger-btn .bar {
@@ -1423,6 +1445,110 @@ footer a:hover {
         border-radius: 6px;
     }
 
+    /* Hero Section Mobile */
+    .hero {
+        min-height: auto;
+        padding: 40px 15px;
+    }
+
+    .hero-overlay {
+        padding: 30px 18px;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+        word-break: break-word;
+    }
+
+    .hero-subtitle {
+        font-size: 1.05rem;
+    }
+
+    .typing-container {
+        font-size: 1.05rem;
+        min-height: 32px;
+    }
+
+    .hero-tags {
+        font-size: 0.9rem;
+    }
+
+    .cta-buttons {
+        gap: 10px;
+    }
+
+    /* About & Competencies Mobile */
+    #about {
+        padding: 30px 15px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .about-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-profile-card {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .bio-p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .competency-box {
+        padding: 16px 14px;
+    }
+
+    /* Skills Grid Mobile */
+    .skills-container {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .skills-category {
+        padding: 14px;
+    }
+
+    /* Filter Controls Mobile */
+    .filter-container {
+        gap: 8px;
+    }
+
+    .filter-btn {
+        padding: 8px 14px;
+        font-size: 0.82rem;
+    }
+
+    /* Projects Grid Mobile */
+    .projects-container,
+    .modal-projects-grid,
+    .research-container {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .project {
+        padding: 18px;
+    }
+
+    .project-links {
+        flex-direction: row;
+        gap: 8px;
+    }
+
+    .project-links .cta-button {
+        font-size: 0.82rem;
+        padding: 8px 12px;
+        flex: 1;
+        text-align: center;
+    }
+
     /* Projects Modal Phone Form Select Filter */
     .modal-filters {
         display: none !important;
@@ -1465,35 +1591,24 @@ footer a:hover {
         padding: 8px;
     }
 
-    .hero h1 {
-        font-size: 1.8rem;
-    }
-
-    .hero-subtitle {
-        font-size: 1.1rem;
-    }
-
-    .about-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .projects-container,
-    .modal-projects-grid,
-    .research-container {
-        grid-template-columns: 1fr;
+    .modal-content {
+        width: 96%;
+        max-width: 100%;
+        height: 94vh;
+        margin: 3vh auto;
+        border-radius: 12px;
     }
 
     .modal-header {
-        padding: 18px 20px;
+        padding: 16px 18px;
     }
 
     .modal-title-box h2 {
-        font-size: 1.3rem;
+        font-size: 1.25rem;
     }
 
     .modal-projects-grid {
-        padding: 20px;
+        padding: 16px 14px;
     }
 
     /* Hide Desktop View More button on Certifications in Mobile View */
@@ -1501,7 +1616,13 @@ footer a:hover {
         display: none !important;
     }
 
-    /* Publications Mobile Slider */
+    /* Publications Mobile Section & Slider */
+    #research {
+        padding: 30px 15px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
     .pub-slider-wrapper {
         overflow: hidden;
         width: 100%;
@@ -1520,16 +1641,48 @@ footer a:hover {
         min-width: 100%;
         box-sizing: border-box;
         flex-direction: column;
-        gap: 15px;
-        padding: 18px;
+        gap: 14px;
+        padding: 18px 14px;
+        border-left-width: 4px;
     }
 
     .pub-preview-container {
         width: 100%;
-        height: 170px;
+        height: 160px;
     }
 
-    /* Certifications Mobile Slider (2 at a time) */
+    .pub-title {
+        font-size: 1.08rem;
+        line-height: 1.35;
+    }
+
+    .pub-summary {
+        font-size: 0.88rem;
+        line-height: 1.5;
+        margin-bottom: 12px;
+    }
+
+    .pub-actions {
+        flex-direction: column;
+        gap: 8px;
+        width: 100%;
+    }
+
+    .pub-btn {
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+        padding: 8px 12px;
+        font-size: 0.85rem;
+    }
+
+    /* Certifications Mobile Slider */
+    #certifications {
+        padding: 30px 15px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
     .cert-slider-wrapper {
         overflow: hidden;
         width: 100%;
@@ -1548,29 +1701,38 @@ footer a:hover {
         min-width: calc((100% - 10px) / 2);
         box-sizing: border-box;
         margin: 0;
-        padding: 16px 10px;
+        padding: 14px 8px;
     }
 
     #cert-slider-track .certification .cert-logo {
-        width: 65px;
-        height: 65px;
+        width: 60px;
+        height: 60px;
         margin-bottom: 8px;
     }
 
     #cert-slider-track .certification h4 {
-        font-size: 0.9rem;
-        margin: 6px 0 8px 0;
-        line-height: 1.3;
+        font-size: 0.85rem;
+        margin: 4px 0 6px 0;
+        line-height: 1.25;
+        word-break: break-word;
     }
 
     #cert-slider-track .certification .cert-issuer {
-        font-size: 0.78rem;
-        margin-bottom: 10px;
+        font-size: 0.74rem;
+        margin-bottom: 8px;
+        word-break: break-word;
     }
 
     #cert-slider-track .certification a {
-        font-size: 0.78rem;
-        padding: 5px 8px;
+        font-size: 0.74rem;
+        padding: 5px 6px;
+        width: 100%;
+        display: block;
+        box-sizing: border-box;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-align: center;
     }
 
     /* Force display all hidden certs in mobile slider */
@@ -1583,6 +1745,248 @@ footer a:hover {
     .cert-slider-controls {
         display: flex !important;
         margin-top: 20px;
+    }
+
+    /* Contact Section Mobile */
+    #contact {
+        padding: 30px 15px;
+    }
+
+    .contact-info-card {
+        padding: 25px 15px;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .contact-item {
+        padding: 16px 12px;
+        gap: 12px;
+        min-width: 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .contact-item a {
+        word-break: break-all;
+        overflow-wrap: anywhere;
+    }
+}
+
+/* Extra Small Devices & Phones (<= 480px) */
+@media (max-width: 480px) {
+    section {
+        padding: 30px 12px;
+    }
+
+    section h2 {
+        font-size: 1.38rem;
+        margin-bottom: 20px;
+    }
+
+    .nav-container {
+        padding: 8px 10px;
+        gap: 6px;
+    }
+
+    .nav-brand {
+        font-size: 0.84rem;
+        letter-spacing: 0;
+    }
+
+    .nav-quick-links {
+        gap: 4px;
+    }
+
+    .nav-quick-links .nav-link {
+        font-size: 0.68rem;
+        padding: 3px 7px;
+    }
+
+    .hero {
+        padding: 25px 10px;
+    }
+
+    .hero-overlay {
+        padding: 22px 12px;
+        border-radius: 10px;
+    }
+
+    .hero-badge-pill {
+        font-size: 0.7rem;
+        padding: 4px 10px;
+        letter-spacing: 0.3px;
+        white-space: normal;
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 1.45rem;
+        line-height: 1.25;
+        margin-bottom: 10px;
+    }
+
+    .typing-container {
+        font-size: 0.92rem;
+        min-height: 28px;
+    }
+
+    .hero-subtitle {
+        font-size: 0.92rem;
+    }
+
+    .hero-tags {
+        font-size: 0.82rem;
+        margin-bottom: 20px;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .cta-buttons .cta-button {
+        width: 100%;
+        text-align: center;
+        padding: 10px 14px;
+    }
+
+    #about {
+        padding: 20px 10px;
+    }
+
+    .profile-frame {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 12px;
+    }
+
+    .profile-meta h3 {
+        font-size: 1.15rem;
+    }
+
+    .profile-title {
+        font-size: 0.82rem;
+    }
+
+    .csa-license-tag {
+        font-size: 0.76rem;
+        padding: 8px 10px;
+    }
+
+    .competency-title {
+        font-size: 0.95rem;
+        padding-left: 8px;
+    }
+
+    .competency-slider-controls {
+        padding: 8px 10px;
+        gap: 8px;
+    }
+
+    .comp-nav-btn {
+        padding: 7px 12px;
+        font-size: 0.8rem;
+    }
+
+    .project {
+        padding: 14px 12px;
+    }
+
+    .project-image {
+        height: 150px;
+    }
+
+    .project h3 {
+        font-size: 1.05rem;
+    }
+
+    .project-links {
+        flex-direction: column;
+    }
+
+    .project-links .cta-button {
+        width: 100%;
+    }
+
+    .view-more-btn {
+        width: 100%;
+        padding: 12px 20px;
+        font-size: 0.95rem;
+        box-sizing: border-box;
+    }
+
+    #research {
+        padding: 20px 10px;
+    }
+
+    .publication-item {
+        padding: 14px 10px;
+    }
+
+    .pub-preview-container {
+        height: 140px;
+    }
+
+    .pub-title {
+        font-size: 1.0rem;
+    }
+
+    #certifications {
+        padding: 20px 10px;
+    }
+
+    #cert-slider-track .certification {
+        flex: 0 0 100%;
+        min-width: 100%;
+        padding: 18px 12px;
+    }
+
+    #cert-slider-track .certification .cert-logo {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 10px;
+    }
+
+    #cert-slider-track .certification h4 {
+        font-size: 0.95rem;
+        margin: 6px 0 8px 0;
+    }
+
+    #cert-slider-track .certification .cert-issuer {
+        font-size: 0.8rem;
+    }
+
+    #cert-slider-track .certification a {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+}
+
+/* Ultra Small Phones (<= 360px) */
+@media (max-width: 360px) {
+    .nav-brand {
+        font-size: 0.76rem;
+    }
+
+    .nav-quick-links .nav-link {
+        font-size: 0.64rem;
+        padding: 2px 5px;
+    }
+
+    .hero h1 {
+        font-size: 1.3rem;
+    }
+
+    section h2 {
+        font-size: 1.25rem;
+    }
+
+    .pub-title {
+        font-size: 0.94rem;
     }
 }
 

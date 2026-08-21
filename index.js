@@ -363,7 +363,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const total = items.length;
             if (total === 0) return;
 
-            const perPage = (window.innerWidth <= 768 && trackId === 'cert-slider-track') ? 2 : 1;
+            const perPage = (window.innerWidth <= 768 && trackId === 'cert-slider-track') ? (window.innerWidth <= 480 ? 1 : 2) : 1;
             const maxPages = Math.ceil(total / perPage);
 
             if (currentPage >= maxPages) currentPage = maxPages - 1;
@@ -391,7 +391,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         nextBtn.addEventListener('click', () => {
             const items = getItems();
-            const perPage = (window.innerWidth <= 768 && trackId === 'cert-slider-track') ? 2 : 1;
+            const perPage = (window.innerWidth <= 768 && trackId === 'cert-slider-track') ? (window.innerWidth <= 480 ? 1 : 2) : 1;
             const maxPages = Math.ceil(items.length / perPage);
             if (currentPage < maxPages - 1) {
                 currentPage++;

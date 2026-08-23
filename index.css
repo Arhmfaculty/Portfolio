@@ -440,6 +440,7 @@ section h2::after {
     color: #e0e2e8;
     font-style: italic;
     margin-bottom: 20px;
+    text-align: justify;
 }
 
 .mobile-bio-p {
@@ -1623,7 +1624,7 @@ footer a:hover {
         color: #c5c6c7;
         font-style: normal;
         margin-bottom: 0;
-        text-align: left;
+        text-align: justify;
     }
 
     .desktop-bio-p {

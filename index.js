@@ -241,6 +241,45 @@ document.addEventListener('DOMContentLoaded', () => {
     const dotsContainer = document.getElementById('comp-dots');
     const pageText = document.getElementById('comp-page-text');
 
+    // Helper function for touch swipe gestures on mobile
+    function addTouchSwipeSupport(element, onSwipeLeft, onSwipeRight) {
+        if (!element) return;
+        let startX = 0;
+        let startY = 0;
+        let distX = 0;
+        let distY = 0;
+        const threshold = 35;
+
+        element.addEventListener('touchstart', (e) => {
+            const touch = e.touches[0];
+            startX = touch.clientX;
+            startY = touch.clientY;
+            distX = 0;
+            distY = 0;
+        }, { passive: true });
+
+        element.addEventListener('touchmove', (e) => {
+            if (!startX || !startY) return;
+            const touch = e.touches[0];
+            distX = touch.clientX - startX;
+            distY = touch.clientY - startY;
+        }, { passive: true });
+
+        element.addEventListener('touchend', () => {
+            if (Math.abs(distX) > Math.abs(distY) && Math.abs(distX) >= threshold) {
+                if (distX < 0) {
+                    onSwipeLeft();
+                } else {
+                    onSwipeRight();
+                }
+            }
+            startX = 0;
+            startY = 0;
+            distX = 0;
+            distY = 0;
+        });
+    }
+
     if (prevBtn && nextBtn && sliderTrack) {
         let currentPage = 0;
 
@@ -301,6 +340,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 currentPage--;
                 updateSlider();
             }
+        });
+
+        // Touch Swipe Gestures for Competencies Slider
+        addTouchSwipeSupport(sliderTrack, () => {
+            if (!nextBtn.disabled) nextBtn.click();
+        }, () => {
+            if (!prevBtn.disabled) prevBtn.click();
         });
 
         window.addEventListener('resize', updateSlider);
@@ -453,6 +499,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 currentPage--;
                 updateSlider();
             }
+        });
+
+        // Touch Swipe Gestures for Mobile Sliders (Publications & Certifications)
+        addTouchSwipeSupport(track, () => {
+            if (!nextBtn.disabled) nextBtn.click();
+        }, () => {
+            if (!prevBtn.disabled) prevBtn.click();
         });
 
         window.addEventListener('resize', updateSlider);

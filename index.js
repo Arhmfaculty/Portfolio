@@ -111,12 +111,52 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeModalBtn = document.getElementById('close-projects-modal');
     const projectsModal = document.getElementById('projects-modal');
     const modalBackdrop = document.querySelector('.modal-backdrop');
+    const modalProjectsGrid = document.querySelector('.modal-projects-grid');
+    const modalTopBar = document.getElementById('modal-top-bar');
+    const toggleHeaderBtn = document.getElementById('toggle-modal-header');
+
+    let isManuallyFolded = false;
+
+    function updateHeaderFoldState() {
+        if (!modalTopBar) return;
+        
+        const isScrolled = modalProjectsGrid && modalProjectsGrid.scrollTop > 30;
+        
+        if (isManuallyFolded || isScrolled) {
+            modalTopBar.classList.add('folded');
+            if (toggleHeaderBtn) {
+                const foldText = toggleHeaderBtn.querySelector('.fold-text');
+                if (foldText) foldText.textContent = 'Expand';
+            }
+        } else {
+            modalTopBar.classList.remove('folded');
+            if (toggleHeaderBtn) {
+                const foldText = toggleHeaderBtn.querySelector('.fold-text');
+                if (foldText) foldText.textContent = 'Fold Top';
+            }
+        }
+    }
+
+    if (modalProjectsGrid) {
+        modalProjectsGrid.addEventListener('scroll', updateHeaderFoldState);
+    }
+
+    if (toggleHeaderBtn) {
+        toggleHeaderBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            isManuallyFolded = !isManuallyFolded;
+            updateHeaderFoldState();
+        });
+    }
 
     function openModal() {
         if (projectsModal) {
             projectsModal.classList.add('active');
             projectsModal.setAttribute('aria-hidden', 'false');
             document.body.classList.add('modal-open');
+            isManuallyFolded = false;
+            if (modalProjectsGrid) modalProjectsGrid.scrollTop = 0;
+            updateHeaderFoldState();
         }
     }
 
@@ -221,8 +261,13 @@ document.addEventListener('DOMContentLoaded', () => {
             if (currentPage > maxPages) currentPage = maxPages;
             if (currentPage < 0) currentPage = 0;
 
-            const shiftPercent = currentPage * 100;
-            sliderTrack.style.transform = `translateX(-${shiftPercent}%)`;
+            const visible = getVisibleCardsCount();
+            const targetIndex = Math.min(currentPage * visible, sliderTrack.children.length - 1);
+            const targetCard = sliderTrack.children[targetIndex];
+            const firstCard = sliderTrack.children[0];
+            const shiftPixels = targetCard && firstCard ? (targetCard.offsetLeft - firstCard.offsetLeft) : 0;
+
+            sliderTrack.style.transform = `translateX(-${shiftPixels}px)`;
 
             // Update arrow disabled states
             prevBtn.disabled = (currentPage === 0);
@@ -369,8 +414,12 @@ document.addEventListener('DOMContentLoaded', () => {
             if (currentPage >= maxPages) currentPage = maxPages - 1;
             if (currentPage < 0) currentPage = 0;
 
-            const shiftPercent = currentPage * 100;
-            track.style.transform = `translateX(-${shiftPercent}%)`;
+            const targetIndex = Math.min(currentPage * perPage, total - 1);
+            const targetItem = items[targetIndex];
+            const firstItem = items[0];
+            const shiftPixels = targetItem && firstItem ? (targetItem.offsetLeft - firstItem.offsetLeft) : 0;
+
+            track.style.transform = `translateX(-${shiftPixels}px)`;
 
             prevBtn.disabled = (currentPage === 0);
             nextBtn.disabled = (currentPage >= maxPages - 1);
@@ -439,6 +488,29 @@ document.addEventListener('DOMContentLoaded', () => {
                 mobileMenuToggle.classList.remove('active');
                 navMenu.classList.remove('active');
             }
+        });
+    }
+
+    // 9. Lively IntersectionObserver Scroll Entrance Animations
+    if ('IntersectionObserver' in window) {
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -30px 0px'
+        };
+
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        const revealElements = document.querySelectorAll('section:not(#home), .project:not(.modal-project), .publication-item, .about-profile-card, .about-bio-card, .competency-box, .contact-info-card');
+        revealElements.forEach(el => {
+            el.classList.add('reveal-on-scroll');
+            revealObserver.observe(el);
         });
     }
 });

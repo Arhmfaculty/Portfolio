@@ -46,9 +46,8 @@
       <div class="typing-container">
         <span id="hero-typing-text" class="typing-text"></span><span class="cursor">&nbsp;</span>
       </div>
-      <p class="hero-tags">Computer Engineer | Data Science | Networking | Internet of Things</p>
       <div class="cta-buttons">
-        <a href="https://maxwellantwibosiak.wixsite.com/portfolio" class="cta-button" target="_blank" rel="noopener noreferrer">View Non-Technical Portfolio &rarr;</a>
+        <a href="https://maxwellantwibosiak.wixsite.com/portfolio" class="cta-button desktop-only" target="_blank" rel="noopener noreferrer">View Non-Technical Portfolio &rarr;</a>
         <a href="documents/MAXWELL B. Antwi_CV.pdf" class="cta-button" target="_blank" rel="noopener noreferrer">View Resume (PDF)</a>
       </div>
     </div>
@@ -67,15 +66,20 @@
           <h3>Maxwell B. Antwi</h3>
           <p class="profile-title">Digital Forensics & Incident Response (DFIR) Specialist</p>
           <div class="csa-license-tag">
-            <span class="tag-label">CSA LICENSE</span> Licensed Digital Forensics Professional<br>
+            Licensed Digital Forensics Professional<br>
             <small>Cyber Security Authority (CSA), Ghana</small>
           </div>
         </div>
+        <!-- Bio Paragraph (Visible on Mobile inside Profile Card) -->
+        <p class="bio-p mobile-bio-p">
+          I am a licensed <strong>Digital Forensics Professional</strong> by the <strong>Cyber Security Authority (CSA), Ghana</strong>, specializing in <strong>Digital Forensics and Incident Response (DFIR)</strong>. My work spans forensic analysis, threat detection, malware examination, and evidence preservation across complex enterprise environments.
+        </p>
       </div>
 
       <!-- Main Bio & Competencies -->
       <div class="about-bio-card">
-        <p class="bio-p">
+        <!-- Bio Paragraph (Visible on Desktop inside Bio Card) -->
+        <p class="bio-p desktop-bio-p">
           I am a licensed <strong>Digital Forensics Professional</strong> by the <strong>Cyber Security Authority (CSA), Ghana</strong>, specializing in <strong>Digital Forensics and Incident Response (DFIR)</strong>. My work spans forensic analysis, threat detection, malware examination, and evidence preservation across complex enterprise environments.
         </p>
 
@@ -174,39 +178,41 @@
         </div>
       </div>
 
-      <div class="project" data-category="cybersecurity">
+      <div class="project" data-category="forensics cybersecurity">
         <div class="project-header">
-          <img src="images/Emails.png" alt="EmailPicker Tool" class="project-image">
-          <h3>EmailPicker - Email Recon Tool</h3>
+          <img src="images/jtag_mobile_cover.png" alt="Operation Alpine JTAG Mobile Forensics" class="project-image">
+          <h3>Operation Alpine: JTAG Mobile Forensics</h3>
           <div class="project-tags">
-            <span class="tag">Cybersecurity</span>
-            <span class="tag">OSINT</span>
-            <span class="tag">Python</span>
+            <span class="tag">Mobile Forensics</span>
+            <span class="tag">JTAG Acquisition</span>
+            <span class="tag">Hardware Forensics</span>
+            <span class="tag">EXIF & GPS</span>
           </div>
         </div>
         <p class="project-description">
-          Developed an OSINT email reconnaissance tool in Python utilizing proxy rotation and multi-threading to collect public emails from certificate logs and search engines.
+          Hardware-level physical mobile extraction and forensic artifact analysis using JTAG interface techniques. Recovered communication logs (SMS, messaging), contact databases, geolocation bookmarks, EXIF photo metadata, and carved deleted file fragments from encrypted memory chips.
         </p>
         <div class="project-links">
-          <a href="https://github.com/Arhmfaculty/EmailPicker--Email-Recon-Tool" target="_blank" rel="noopener noreferrer" class="cta-button">View Repo & Details</a>
+          <a href="documents/Forensics Cases/Operation Alpine JTAG Mobile.pdf" target="_blank" rel="noopener noreferrer" class="cta-button">Read Forensic Report (PDF)</a>
         </div>
       </div>
 
       <div class="project" data-category="forensics cybersecurity">
         <div class="project-header">
-          <img src="images/iphone_se_forensics.png" alt="iOS 13 iPhone SE Forensic Analysis" class="project-image">
-          <h3>iOS 13 Mobile Forensics</h3>
+          <img src="images/insider_threat_cover.png" alt="Insider Threat & IP Theft Investigation" class="project-image">
+          <h3>Insider Threat & Intellectual Property Theft</h3>
           <div class="project-tags">
-            <span class="tag">Mobile Forensics</span>
-            <span class="tag">iOS Artifacts</span>
-            <span class="tag">DFIR</span>
+            <span class="tag">Insider Threat</span>
+            <span class="tag">IP Theft</span>
+            <span class="tag">Data Exfiltration</span>
+            <span class="tag">Steganography</span>
           </div>
         </div>
         <p class="project-description">
-          Executed a structured mobile forensic investigation on an iOS 13 iPhone SE backup image. Parsed proprietary iTunes backup structures, extracted key artifacts including device telemetry, user accounts, application data, and communication logs, and performed cross-tool evidence validation.
+          Comprehensive forensic investigation into unauthorized exfiltration of corporate intellectual property by an internal employee. Identified malicious intent, external collusion, steganographic obfuscation used to conceal staged files, and unauthorized data transfers.
         </p>
         <div class="project-links">
-          <a href="documents/iPhone_SE Forensic_Report.pdf" target="_blank" rel="noopener noreferrer" class="cta-button">Read Forensic Report (PDF)</a>
+          <a href="documents/Forensics Cases/Insider Threat & IP Theft.pdf" target="_blank" rel="noopener noreferrer" class="cta-button">Read Forensic Report (PDF)</a>
         </div>
       </div>
 
@@ -270,7 +276,7 @@
     <!-- View All Projects CTA Button -->
     <div class="view-more-container">
       <button id="open-projects-modal" class="cta-button view-more-btn">
-        View All Projects (20 Total) &rarr;
+        View All Projects (26 Total) &rarr;
       </button>
     </div>
   </section>
@@ -280,45 +286,163 @@
     <div class="modal-backdrop"></div>
     <div class="modal-content">
       
-      <div class="modal-header">
-        <div class="modal-title-box">
-          <h2>All Projects & Portfolio Works</h2>
-          <p>Explore all 20 cybersecurity, machine learning, networking, and hardware projects.</p>
+      <!-- Modal Header & Filter Top Bar Container -->
+      <div class="modal-top-bar" id="modal-top-bar">
+        <div class="modal-header">
+          <div class="modal-title-box">
+            <h2>All Projects & Portfolio Works</h2>
+            <p class="modal-subtitle">Explore all 26 cybersecurity, digital forensics, machine learning, networking, and hardware projects.</p>
+          </div>
+          <div class="modal-header-actions">
+            <button id="toggle-modal-header" class="modal-fold-btn" aria-label="Fold or expand top bar" title="Fold / Expand Header">
+              <span class="fold-text">Fold Top</span> <span class="fold-icon">▲</span>
+            </button>
+            <button id="close-projects-modal" class="modal-close-btn" aria-label="Close modal">&times; Close</button>
+          </div>
         </div>
-        <button id="close-projects-modal" class="modal-close-btn" aria-label="Close modal">&times; Close</button>
+
+        <!-- Category Filter Buttons Inside Modal (Desktop View) -->
+        <div class="filter-container modal-filters">
+          <button class="filter-btn active" data-filter="all">All Projects (26)</button>
+          <button class="filter-btn" data-filter="forensics">Forensics Case Studies</button>
+          <button class="filter-btn" data-filter="cybersecurity">Cybersecurity</button>
+          <button class="filter-btn" data-filter="machine-learning">Machine Learning</button>
+          <button class="filter-btn" data-filter="networking">Networking</button>
+          <button class="filter-btn" data-filter="iot">IoT & Hardware</button>
+          <button class="filter-btn" data-filter="documentation">Reports & Governance</button>
+        </div>
+
+        <!-- Mobile Form Select Filter (Phone View Only) -->
+        <div class="mobile-filter-select-wrapper">
+          <label for="mobile-category-select" class="mobile-select-label">Filter Category:</label>
+          <select id="mobile-category-select" class="mobile-filter-select">
+            <option value="all">All Projects (26)</option>
+            <option value="forensics">Forensics Case Studies</option>
+            <option value="cybersecurity">Cybersecurity</option>
+            <option value="machine-learning">Machine Learning</option>
+            <option value="networking">Networking</option>
+            <option value="iot">IoT & Hardware</option>
+            <option value="documentation">Reports & Governance</option>
+          </select>
+        </div>
       </div>
 
-      <!-- Category Filter Buttons Inside Modal (Desktop View) -->
-      <div class="filter-container modal-filters">
-        <button class="filter-btn active" data-filter="all">All Projects (21)</button>
-        <button class="filter-btn" data-filter="forensics">Forensics Case Studies</button>
-        <button class="filter-btn" data-filter="cybersecurity">Cybersecurity</button>
-        <button class="filter-btn" data-filter="machine-learning">Machine Learning</button>
-        <button class="filter-btn" data-filter="networking">Networking</button>
-        <button class="filter-btn" data-filter="iot">IoT & Hardware</button>
-        <button class="filter-btn" data-filter="documentation">Reports & Governance</button>
-      </div>
-
-      <!-- Mobile Form Select Filter (Phone View Only) -->
-      <div class="mobile-filter-select-wrapper">
-        <label for="mobile-category-select" class="mobile-select-label">Filter Category:</label>
-        <select id="mobile-category-select" class="mobile-filter-select">
-          <option value="all">All Projects (21)</option>
-          <option value="forensics">Forensics Case Studies</option>
-          <option value="cybersecurity">Cybersecurity</option>
-          <option value="machine-learning">Machine Learning</option>
-          <option value="networking">Networking</option>
-          <option value="iot">IoT & Hardware</option>
-          <option value="documentation">Reports & Governance</option>
-        </select>
-      </div>
-
-      <!-- Modal Projects Grid (All 21 Projects) -->
+      <!-- Modal Projects Grid (All 26 Projects) -->
       <div class="modal-projects-grid">
             
+        <div class="project modal-project" data-category="cybersecurity machine-learning">
+          <div class="project-header">
+            <img src="images/threathunter_ai.jpg" alt="ThreatHunter AI Dashboard" class="project-image">
+            <h3>ThreatHunter AI</h3>
+            <div class="project-tags">
+              <span class="tag">SOC Automation</span>
+              <span class="tag">Incident Response</span>
+            </div>
+          </div>
+          <p class="project-description">
+            ThreatHunter AI is a Security Operations Center (SOC) triage platform that ingests raw log files, runs them through a 40-rule detection engine, correlates findings into structured incidents, and uses an AI engine to generate expert-level triage reports, all without a backend server.
+          </p>
+          <div class="project-links">
+            <a href="https://github.com/Arhmfaculty/ThreatHunt-AI" target="_blank" rel="noopener noreferrer" class="cta-button">View Repo & Details</a>
+          </div>
+        </div>
+
         <div class="project modal-project" data-category="forensics cybersecurity">
           <div class="project-header">
-            <img src="images/iphone_se_forensics.png" alt="iOS 13 iPhone SE Forensic Analysis" class="project-image">
+            <img src="images/jtag_mobile_cover.png" alt="Operation Alpine JTAG Mobile Forensics" class="project-image">
+            <h3>Operation Alpine: JTAG Mobile Forensics</h3>
+            <div class="project-tags">
+              <span class="tag">Mobile Forensics</span>
+              <span class="tag">JTAG Acquisition</span>
+              <span class="tag">Hardware Forensics</span>
+              <span class="tag">EXIF & GPS</span>
+            </div>
+          </div>
+          <p class="project-description">
+            Hardware-level physical mobile extraction and forensic artifact analysis using JTAG interface techniques. Recovered communication logs (SMS, messaging), contact databases, geolocation bookmarks, EXIF photo metadata, and carved deleted file fragments from encrypted memory chips.
+          </p>
+          <div class="project-links">
+            <a href="documents/Forensics Cases/Operation Alpine JTAG Mobile.pdf" target="_blank" rel="noopener noreferrer" class="cta-button">Read Forensic Report (PDF)</a>
+          </div>
+        </div>
+
+        <div class="project modal-project" data-category="forensics cybersecurity">
+          <div class="project-header">
+            <img src="images/insider_threat_cover.png" alt="Insider Threat & IP Theft Investigation" class="project-image">
+            <h3>Insider Threat & Intellectual Property Theft</h3>
+            <div class="project-tags">
+              <span class="tag">Insider Threat</span>
+              <span class="tag">IP Theft</span>
+              <span class="tag">Data Exfiltration</span>
+              <span class="tag">Steganography</span>
+            </div>
+          </div>
+          <p class="project-description">
+            Comprehensive forensic investigation into unauthorized exfiltration of corporate intellectual property by an internal employee. Identified malicious intent, external collusion, steganographic obfuscation used to conceal staged files, and unauthorized data transfers.
+          </p>
+          <div class="project-links">
+            <a href="documents/Forensics Cases/Insider Threat & IP Theft.pdf" target="_blank" rel="noopener noreferrer" class="cta-button">Read Forensic Report (PDF)</a>
+          </div>
+        </div>
+
+        <div class="project modal-project" data-category="cybersecurity">
+          <div class="project-header">
+            <img src="images/honeypot.png" alt="Cowrie Honeypot" class="project-image">
+            <h3>High-Interaction SSH/Telnet Honeypot with Cowrie</h3>
+            <div class="project-tags">
+              <span class="tag">Cybersecurity</span>
+              <span class="tag">Honeypot</span>
+              <span class="tag">Deception Tech</span>
+            </div>
+          </div>
+          <p class="project-description">
+            Deployed Cowrie honeypot in Dockerized Kali Linux to capture live SSH/Telnet attacker behavior, credentials, payload attempts, and timestamps in real time.
+          </p>
+          <div class="project-links">
+            <a href="documents/Creating honeypot using Cowrie.pdf" target="_blank" rel="noopener noreferrer" class="cta-button">Project report</a>
+          </div>
+        </div>
+
+        <div class="project modal-project" data-category="machine-learning">
+          <div class="project-header">
+            <img src="images/fraud_detection.png" alt="Fraud Detection Model" class="project-image">
+            <h3>Machine Learning Fraud Detection Model</h3>
+            <div class="project-tags">
+              <span class="tag">Machine Learning</span>
+              <span class="tag">Data Science</span>
+              <span class="tag">Python</span>
+            </div>
+          </div>
+          <p class="project-description">
+            Implemented a machine learning model for detecting fraudulent transactions based on key features such as Transaction Amount, Time, Account Age, and Location Change.
+          </p>
+          <div class="project-links">
+            <a href="https://github.com/Arhmfaculty/Fraud-Detection/blob/main/Maxwell_Fraud_Detection.ipynb" target="_blank" rel="noopener noreferrer" class="cta-button">Project Details</a>
+          </div>
+        </div>
+
+        <div class="project modal-project" data-category="cybersecurity">
+          <div class="project-header">
+            <img src="images/juiceShop.png" alt="OWASP Juice Shop" class="project-image">
+            <h3>Penetration Testing Using OWASP Juice Shop</h3>
+            <div class="project-tags">
+              <span class="tag">Cybersecurity</span>
+              <span class="tag">Pentesting</span>
+              <span class="tag">Docker</span>
+            </div>
+          </div>
+          <p class="project-description">
+            Conducted a penetration test on OWASP Juice Shop using Docker and Kali Linux. 
+            Leveraged Burp Suite, Nmap, and Kali utilities to identify and exploit SQL Injection, Stored/Reflected XSS, Insecure File Upload, and Directory Traversal.
+          </p>
+          <div class="project-links">
+            <a href="documents/OWASP Juice Shop.pdf" target="_blank" rel="noopener noreferrer" class="cta-button">Project report</a>
+          </div>
+        </div>
+
+        <div class="project modal-project" data-category="forensics cybersecurity">
+          <div class="project-header">
+            <img src="images/ios13_mobile_forensics_cover.png" alt="iOS 13 iPhone SE Forensic Analysis" class="project-image">
             <h3>iOS 13 Mobile Forensics</h3>
             <div class="project-tags">
               <span class="tag">Mobile Forensics</span>
@@ -334,20 +458,225 @@
           </div>
         </div>
 
-        <div class="project modal-project" data-category="cybersecurity machine-learning">
+        <div class="project modal-project" data-category="forensics cybersecurity">
           <div class="project-header">
-            <img src="images/threathunter_ai.jpg" alt="ThreatHunter AI Dashboard" class="project-image">
-            <h3>ThreatHunter AI</h3>
+            <img src="images/john_doe_cover.png" alt="John Doe Insider Threat Investigation" class="project-image">
+            <h3>John Doe Insider Threat & Data Exfiltration</h3>
             <div class="project-tags">
-              <span class="tag">SOC Automation</span>
+              <span class="tag">Insider Threat</span>
+              <span class="tag">Log Analysis</span>
+              <span class="tag">USB Artifacts</span>
+              <span class="tag">Anti-Forensics</span>
+            </div>
+          </div>
+          <p class="project-description">
+            Detailed forensic case study tracking employee misconduct, unauthorized privilege escalation, data staging, and multi-vector exfiltration via USB and network channels. Uncovered anti-forensic evidence scrubbing attempts and collusion chat logs.
+          </p>
+          <div class="project-links">
+            <a href="documents/Forensics Cases/John Doe Insider Threat.pdf" target="_blank" rel="noopener noreferrer" class="cta-button">Read Forensic Report (PDF)</a>
+          </div>
+        </div>
+
+        <div class="project modal-project" data-category="forensics cybersecurity">
+          <div class="project-header">
+            <img src="images/timestomping_cover.png" alt="Timestomping and MFT Anti-Forensics Analysis" class="project-image">
+            <h3>Timestomping & NTFS MFT Anti-Forensics Analysis</h3>
+            <div class="project-tags">
+              <span class="tag">Anti-Forensics</span>
+              <span class="tag">Timestomping</span>
+              <span class="tag">MFT Analysis</span>
+              <span class="tag">NTFS Artifacts</span>
+            </div>
+          </div>
+          <p class="project-description">
+            Deep-dive forensic examination detecting timestamp manipulation (timestomping) on NTFS file systems. Compared $STANDARD_INFORMATION and $FILE_NAME Master File Table (MFT) attributes to uncover hidden intruder timelines, file creation anomalies, and modified timestamps.
+          </p>
+          <div class="project-links">
+            <a href="documents/Forensics Cases/TimeStoping.pdf" target="_blank" rel="noopener noreferrer" class="cta-button">Read Forensic Report (PDF)</a>
+          </div>
+        </div>
+
+        <div class="project modal-project" data-category="forensics cybersecurity">
+          <div class="project-header">
+            <img src="images/bec_hollow_invoice_cover.png" alt="Operation Hollow Invoice BEC Investigation" class="project-image">
+            <h3>Operation Hollow Invoice: BEC & Financial Fraud</h3>
+            <div class="project-tags">
+              <span class="tag">BEC Investigation</span>
+              <span class="tag">Email Forensics</span>
+              <span class="tag">Credential Harvesting</span>
+              <span class="tag">Financial Fraud</span>
+            </div>
+          </div>
+          <p class="project-description">
+            Digital forensic investigation of a Business Email Compromise (BEC) scheme and fraudulent wire transfers. Traced malicious email headers, credential harvesting vectors, compromised inbox forwarding rules, and financial transaction pathways.
+          </p>
+          <div class="project-links">
+            <a href="documents/Forensics Cases/Operation Hollow Invoice.pdf" target="_blank" rel="noopener noreferrer" class="cta-button">Read Forensic Report (PDF)</a>
+          </div>
+        </div>
+
+        <div class="project modal-project" data-category="cybersecurity">
+          <div class="project-header">
+            <img src="images/hacksecure.png" alt="Hack Secure Assessment" class="project-image">
+            <h3>Web Application Vulnerability Assessment</h3>
+            <div class="project-tags">
+              <span class="tag">Cybersecurity</span>
+              <span class="tag">Pentesting</span>
+              <span class="tag">Wireshark</span>
+            </div>
+          </div>
+          <p class="project-description">
+            Conducted a penetration test on testphp.vulnweb.com during an internship with Hack Secure. 
+            Identified default credential exposure, SQL Injection, and reflected XSS vulnerabilities while inspecting traffic via Wireshark.
+          </p>
+          <div class="project-links">
+            <a href="documents/HACK SECURE_INTERNSHIP.pdf" target="_blank" rel="noopener noreferrer" class="cta-button">Project report</a>
+          </div>
+        </div>
+
+        <div class="project modal-project" data-category="cybersecurity">
+          <div class="project-header">
+            <img src="images/Emails.png" alt="EmailPicker Tool" class="project-image">
+            <h3>EmailPicker - Email Recon Tool</h3>
+            <div class="project-tags">
+              <span class="tag">Cybersecurity</span>
+              <span class="tag">OSINT</span>
+              <span class="tag">Python</span>
+            </div>
+          </div>
+          <p class="project-description">
+            Developed an OSINT email reconnaissance tool in Python utilizing proxy rotation and multi-threading to collect public emails from certificate logs and search engines.
+          </p>
+          <div class="project-links">
+            <a href="https://github.com/Arhmfaculty/EmailPicker--Email-Recon-Tool" target="_blank" rel="noopener noreferrer" class="cta-button">Project Details</a>
+          </div>
+        </div>
+
+        <div class="project modal-project" data-category="forensics cybersecurity">
+          <div class="project-header">
+            <img src="images/browser_forensics.jpg" alt="Browser Artifact Analysis Dashboard" class="project-image">
+            <h3>Browser Artifact Analysis</h3>
+            <div class="project-tags">
+              <span class="tag">Browser Forensics</span>
+              <span class="tag">Web Artifacts</span>
+              <span class="tag">DFIR</span>
+            </div>
+          </div>
+          <p class="project-description">
+            Forensic examination of web browser artifacts across Chrome, Firefox, and Edge to reconstruct user online activity. Parsed web history, cache, session storage, cookies, and download records to trace web-based entry vectors and establish keyboard-level user attribution.
+          </p>
+          <div class="project-links">
+            <a href="documents/Forensics Cases/Browser Artifact Analysis.pdf" target="_blank" rel="noopener noreferrer" class="cta-button">Read Forensic Report (PDF)</a>
+          </div>
+        </div>
+
+        <div class="project modal-project" data-category="forensics cybersecurity">
+          <div class="project-header">
+            <img src="images/web_app_preservation.jpg" alt="Web Application Evidence Preservation" class="project-image">
+            <h3>Web Application & Cloud Evidence Preservation</h3>
+            <div class="project-tags">
+              <span class="tag">Web Forensics</span>
+              <span class="tag">Evidence Preservation</span>
+              <span class="tag">Chain of Custody</span>
+              <span class="tag">Cloud Artifacts</span>
+            </div>
+          </div>
+          <p class="project-description">
+            Technical report establishing legal-grade web application data capture, cloud artifact acquisition, and evidence preservation standards. Covers site mirroring, live session state capture, and formal chain-of-custody documentation for cloud-hosted environments.
+          </p>
+          <div class="project-links">
+            <a href="documents/Forensics Cases/Web Application Preservation.pdf" target="_blank" rel="noopener noreferrer" class="cta-button">Read Forensic Report (PDF)</a>
+          </div>
+        </div>
+
+        <div class="project modal-project" data-category="cybersecurity">
+          <div class="project-header">
+            <img src="images/john_the_ripper.jpg" alt="John the Ripper" class="project-image">
+            <h3>Hash-Based Password Cracking with John the Ripper</h3>
+            <div class="project-tags">
+              <span class="tag">Cybersecurity</span>
+              <span class="tag">Password Cracking</span>
+              <span class="tag">Kali Linux</span>
+            </div>
+          </div>
+          <p class="project-description">
+            Simulated real-world password cracking using John the Ripper in Kali Linux. 
+            Executed dictionary attacks with rockyou.txt, built custom wordlists, and performed incremental brute-force to test hash security.
+          </p>
+          <div class="project-links">
+            <a href="documents/John the Ripper.pdf" target="_blank" rel="noopener noreferrer" class="cta-button">Project report</a>
+          </div>
+        </div>
+
+        <div class="project modal-project" data-category="networking cybersecurity documentation">
+          <div class="project-header">
+            <img src="images/incident.png" alt="Traffic Analysis" class="project-image">
+            <h3>Network Traffic Analysis Using tcpdump</h3>
+            <div class="project-tags">
+              <span class="tag">Networking</span>
+              <span class="tag">tcpdump</span>
               <span class="tag">Incident Response</span>
             </div>
           </div>
           <p class="project-description">
-            ThreatHunter AI is a Security Operations Center (SOC) triage platform that ingests raw log files, runs them through a 40-rule detection engine, correlates findings into structured incidents, and uses an AI engine to generate expert-level triage reports, all without a backend server.
+            Analyzed packet dumps to resolve HTTPS port 443 connectivity issues to an employee background check portal and documented incident mitigation steps.
           </p>
           <div class="project-links">
-            <a href="https://github.com/Arhmfaculty/ThreatHunt-AI" target="_blank" rel="noopener noreferrer" class="cta-button">View Repo & Details</a>
+            <a href="documents/Cybersecurity Incident Report.pdf" target="_blank" rel="noopener noreferrer" class="cta-button">Project Details</a>
+          </div>
+        </div>
+
+        <div class="project modal-project" data-category="iot">
+          <div class="project-header">
+            <img src="images/farm.io.jpg" alt="Farm Security" class="project-image">
+            <h3>Farm.io Security Surveillance</h3>
+            <div class="project-tags">
+              <span class="tag">IoT & Hardware</span>
+              <span class="tag">ESP8266</span>
+              <span class="tag">Biometrics</span>
+            </div>
+          </div>
+          <p class="project-description">
+            Hardware intrusion detection system using ultrasonic sensors, buzzer/email alarms, Adafruit fingerprint authentication, and ESP8266 Wi-Fi logging.
+          </p>
+          <div class="project-links">
+            <a href="https://github.com/Arhmfaculty/Home-Based-Security-Survaillance-using-ESP-8266/tree/main" target="_blank" rel="noopener noreferrer" class="cta-button">Project Details</a>
+          </div>
+        </div>
+
+        <div class="project modal-project" data-category="iot">
+          <div class="project-header">
+            <img src="images/smart_house.jpeg" alt="Smart Home System" class="project-image">
+            <h3>Smart Home Security System</h3>
+            <div class="project-tags">
+              <span class="tag">IoT & Hardware</span>
+              <span class="tag">Access Control</span>
+              <span class="tag">Sensors</span>
+            </div>
+          </div>
+          <p class="project-description">
+            Smart home security architecture featuring biometric authentication, motion detection, and automated locks to enforce physical access control.
+          </p>
+          <div class="project-links">
+            <a href="https://github.com/Arhmfaculty/Smart-Home-Security-Systems/tree/main" target="_blank" rel="noopener noreferrer" class="cta-button">Project Details</a>
+          </div>
+        </div>
+
+        <div class="project modal-project" data-category="cybersecurity documentation">
+          <div class="project-header">
+            <img src="images/sec_assessment.png" alt="Vulnerability Assessment" class="project-image">
+            <h3>Vulnerability Assessment Report</h3>
+            <div class="project-tags">
+              <span class="tag">Cybersecurity</span>
+              <span class="tag">Assessment</span>
+              <span class="tag">Report</span>
+            </div>
+          </div>
+          <p class="project-description">
+            Evaluated remote database server security risks for an e-commerce client, identifying exposed public ports and creating actionable remediation plans.
+          </p>
+          <div class="project-links">
+            <a href="documents/Vulnerability_assessment_report.pdf" target="_blank" rel="noopener noreferrer" class="cta-button">Project Details</a>
           </div>
         </div>
 
@@ -391,135 +720,6 @@
 
         <div class="project modal-project" data-category="cybersecurity">
           <div class="project-header">
-            <img src="images/juiceShop.png" alt="OWASP Juice Shop" class="project-image">
-            <h3>Penetration Testing Using OWASP Juice Shop</h3>
-            <div class="project-tags">
-              <span class="tag">Cybersecurity</span>
-              <span class="tag">Pentesting</span>
-              <span class="tag">Docker</span>
-            </div>
-          </div>
-          <p class="project-description">
-            Conducted a penetration test on OWASP Juice Shop using Docker and Kali Linux. 
-            Leveraged Burp Suite, Nmap, and Kali utilities to identify and exploit SQL Injection, Stored/Reflected XSS, Insecure File Upload, and Directory Traversal.
-          </p>
-          <div class="project-links">
-            <a href="documents/OWASP Juice Shop.pdf" target="_blank" rel="noopener noreferrer" class="cta-button">Project report</a>
-          </div>
-        </div>
-
-        <div class="project modal-project" data-category="cybersecurity">
-          <div class="project-header">
-            <img src="images/hacksecure.png" alt="Hack Secure Assessment" class="project-image">
-            <h3>Web Application Vulnerability Assessment</h3>
-            <div class="project-tags">
-              <span class="tag">Cybersecurity</span>
-              <span class="tag">Pentesting</span>
-              <span class="tag">Wireshark</span>
-            </div>
-          </div>
-          <p class="project-description">
-            Conducted a penetration test on testphp.vulnweb.com during an internship with Hack Secure. 
-            Identified default credential exposure, SQL Injection, and reflected XSS vulnerabilities while inspecting traffic via Wireshark.
-          </p>
-          <div class="project-links">
-            <a href="documents/HACK SECURE_INTERNSHIP.pdf" target="_blank" rel="noopener noreferrer" class="cta-button">Project report</a>
-          </div>
-        </div>
-
-        <div class="project modal-project" data-category="cybersecurity">
-          <div class="project-header">
-            <img src="images/john_the_ripper.jpg" alt="John the Ripper" class="project-image">
-            <h3>Hash-Based Password Cracking with John the Ripper</h3>
-            <div class="project-tags">
-              <span class="tag">Cybersecurity</span>
-              <span class="tag">Password Cracking</span>
-              <span class="tag">Kali Linux</span>
-            </div>
-          </div>
-          <p class="project-description">
-            Simulated real-world password cracking using John the Ripper in Kali Linux. 
-            Executed dictionary attacks with rockyou.txt, built custom wordlists, and performed incremental brute-force to test hash security.
-          </p>
-          <div class="project-links">
-            <a href="documents/John the Ripper.pdf" target="_blank" rel="noopener noreferrer" class="cta-button">Project report</a>
-          </div>
-        </div>
-
-        <div class="project modal-project" data-category="cybersecurity">
-          <div class="project-header">
-            <img src="images/honeypot.png" alt="Cowrie Honeypot" class="project-image">
-            <h3>High-Interaction SSH/Telnet Honeypot with Cowrie</h3>
-            <div class="project-tags">
-              <span class="tag">Cybersecurity</span>
-              <span class="tag">Honeypot</span>
-              <span class="tag">Deception Tech</span>
-            </div>
-          </div>
-          <p class="project-description">
-            Deployed Cowrie honeypot in Dockerized Kali Linux to capture live SSH/Telnet attacker behavior, credentials, payload attempts, and timestamps in real time.
-          </p>
-          <div class="project-links">
-            <a href="documents/Creating honeypot using Cowrie.pdf" target="_blank" rel="noopener noreferrer" class="cta-button">Project report</a>
-          </div>
-        </div>
-
-        <div class="project modal-project" data-category="machine-learning">
-          <div class="project-header">
-            <img src="images/fraud_detection.png" alt="Fraud Detection Model" class="project-image">
-            <h3>Machine Learning Fraud Detection Model</h3>
-            <div class="project-tags">
-              <span class="tag">Machine Learning</span>
-              <span class="tag">Data Science</span>
-              <span class="tag">Python</span>
-            </div>
-          </div>
-          <p class="project-description">
-            Implemented a machine learning model for detecting fraudulent transactions based on key features such as Transaction Amount, Time, Account Age, and Location Change.
-          </p>
-          <div class="project-links">
-            <a href="https://github.com/Arhmfaculty/Fraud-Detection/blob/main/Maxwell_Fraud_Detection.ipynb" target="_blank" rel="noopener noreferrer" class="cta-button">Project Details</a>
-          </div>
-        </div>
-
-        <div class="project modal-project" data-category="cybersecurity">
-          <div class="project-header">
-            <img src="images/Emails.png" alt="EmailPicker Tool" class="project-image">
-            <h3>EmailPicker - Email Recon Tool</h3>
-            <div class="project-tags">
-              <span class="tag">Cybersecurity</span>
-              <span class="tag">OSINT</span>
-              <span class="tag">Python</span>
-            </div>
-          </div>
-          <p class="project-description">
-            Developed an OSINT email reconnaissance tool in Python utilizing proxy rotation and multi-threading to collect public emails from certificate logs and search engines.
-          </p>
-          <div class="project-links">
-            <a href="https://github.com/Arhmfaculty/EmailPicker--Email-Recon-Tool" target="_blank" rel="noopener noreferrer" class="cta-button">Project Details</a>
-          </div>
-        </div>
-
-        <div class="project modal-project" data-category="cybersecurity documentation">
-          <div class="project-header">
-            <img src="images/sec_assessment.png" alt="Vulnerability Assessment" class="project-image">
-            <h3>Vulnerability Assessment Report</h3>
-            <div class="project-tags">
-              <span class="tag">Cybersecurity</span>
-              <span class="tag">Assessment</span>
-              <span class="tag">Report</span>
-            </div>
-          </div>
-          <p class="project-description">
-            Evaluated remote database server security risks for an e-commerce client, identifying exposed public ports and creating actionable remediation plans.
-          </p>
-          <div class="project-links">
-            <a href="documents/Vulnerability_assessment_report.pdf" target="_blank" rel="noopener noreferrer" class="cta-button">Project Details</a>
-          </div>
-        </div>
-
-        <div class="project modal-project" data-category="cybersecurity">
-          <div class="project-header">
             <img src="images/crypto_game.png" alt="Cryptography Game" class="project-image">
             <h3>Cryptography Security Game</h3>
             <div class="project-tags">
@@ -551,60 +751,6 @@
           </p>
           <div class="project-links">
             <a href="https://github.com/Arhmfaculty/Cracking-Leaked-Password/tree/main" target="_blank" rel="noopener noreferrer" class="cta-button">Project Details</a>
-          </div>
-        </div>
-
-        <div class="project modal-project" data-category="iot">
-          <div class="project-header">
-            <img src="images/farm.io.jpg" alt="Farm Security" class="project-image">
-            <h3>Farm.io Security Surveillance</h3>
-            <div class="project-tags">
-              <span class="tag">IoT & Hardware</span>
-              <span class="tag">ESP8266</span>
-              <span class="tag">Biometrics</span>
-            </div>
-          </div>
-          <p class="project-description">
-            Hardware intrusion detection system using ultrasonic sensors, buzzer/email alarms, Adafruit fingerprint authentication, and ESP8266 Wi-Fi logging.
-          </p>
-          <div class="project-links">
-            <a href="https://github.com/Arhmfaculty/Home-Based-Security-Survaillance-using-ESP-8266/tree/main" target="_blank" rel="noopener noreferrer" class="cta-button">Project Details</a>
-          </div>
-        </div>
-
-        <div class="project modal-project" data-category="iot">
-          <div class="project-header">
-            <img src="images/smart_house.jpeg" alt="Smart Home System" class="project-image">
-            <h3>Smart Home Security System</h3>
-            <div class="project-tags">
-              <span class="tag">IoT & Hardware</span>
-              <span class="tag">Access Control</span>
-              <span class="tag">Sensors</span>
-            </div>
-          </div>
-          <p class="project-description">
-            Smart home security architecture featuring biometric authentication, motion detection, and automated locks to enforce physical access control.
-          </p>
-          <div class="project-links">
-            <a href="https://github.com/Arhmfaculty/Smart-Home-Security-Systems/tree/main" target="_blank" rel="noopener noreferrer" class="cta-button">Project Details</a>
-          </div>
-        </div>
-
-        <div class="project modal-project" data-category="networking cybersecurity documentation">
-          <div class="project-header">
-            <img src="images/incident.png" alt="Traffic Analysis" class="project-image">
-            <h3>Network Traffic Analysis Using tcpdump</h3>
-            <div class="project-tags">
-              <span class="tag">Networking</span>
-              <span class="tag">tcpdump</span>
-              <span class="tag">Incident Response</span>
-            </div>
-          </div>
-          <p class="project-description">
-            Analyzed packet dumps to resolve HTTPS port 443 connectivity issues to an employee background check portal and documented incident mitigation steps.
-          </p>
-          <div class="project-links">
-            <a href="documents/Cybersecurity Incident Report.pdf" target="_blank" rel="noopener noreferrer" class="cta-button">Project Details</a>
           </div>
         </div>
 
@@ -664,6 +810,9 @@
 
       </div>
     </div>
+
+      </div>
+    </div>
   </div>
 
   <!-- Research & Publications Section -->
@@ -706,8 +855,7 @@
             <h3 class="pub-title">SensePay: Preventing Relay Attacks in NFC Payments with Edge ML</h3>
             <p class="pub-summary">Research paper detailing a smart security framework leveraging supervised edge machine learning to detect anomalies and prevent relay attacks in contactless NFC transactions.</p>
             <div class="pub-actions">
-              <a href="documents/SensePay.pdf" target="_blank" rel="noopener noreferrer" class="pub-btn primary">Read Paper (PDF)</a>
-              <a href="https://github.com/Arhmfaculty/SensePay-A-Proof-of-Concept-Smart-Security-Framework-for-NFC-Based-Transactions" target="_blank" rel="noopener noreferrer" class="pub-btn secondary">View Code & Repo</a>
+              <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7020318" target="_blank" rel="noopener noreferrer" class="pub-btn primary">View SSRN Publication Page</a>
             </div>
           </div>
         </div>
